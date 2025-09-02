@@ -12,7 +12,6 @@ Final QA project covering **Web**, **Mobile**, and **Backend (API)** testing for
 - `requirements/` – RTM (Requirements ↔ Test Cases ↔ Bugs) for each task  
 - `bug-reports/` – Selected bug examples (public markdown)  
 - `postman-collection/` – Postman collection + environment (Task 3)  
-- `sql/` – SQL validation queries (if any)  
 - `screenshots/` – Screenshots of reported issues  
 
 ## Tools & Stack
