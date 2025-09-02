@@ -1,0 +1,122 @@
+ID,Test Case,Precondition,Test Steps,Test Data (Request Body),Expected Result,Actual Result,Status,Jira Bug Link
+1,POST /api/v1/courier – Successful creation,,Send POST request to /api/v1/courier with valid body,"{
+    ""login"": ""ninja"",
+    ""password"": ""1234"",
+    ""firstName"": ""saske""
+}","201 Created
+Body: 
+{
+    ""ok"": true
+}","201 Created
+Body: 
+{
+    ""ok"": true
+}",Passed,
+2,"POST /api/v1/courier – Missing required
+login fields ",,Send POST request without login fields ,"{
+   ""password"": ""1234"",
+    ""firstName"": ""saske""
+}","400 Bad Request
+Body: 
+{
+    ""message"":""Not enough data to create an account""
+}
+","400 Bad Request
+Body: 
+{
+    ""message"":""Not enough data to create an account""
+}
+",Passed,
+3,"POST /api/v1/courier – Missing required
+password fields ",,Send POST request without password fields ,"{
+    ""login"": ""ninja"",
+    ""firstName"": ""saske""
+}","400 Bad Request
+Body: 
+{
+    ""message"":""Not enough data to create an account""
+}
+","400 Bad Request
+Body: 
+{
+    ""message"":""Not enough data to create an account""
+}
+",Passed,
+4,"POST /api/v1/courier – Missing required
+firstName fields ",,Send POST request without firstName fields ,"{
+    ""login"": ""ninja"",
+    ""password"": ""1234"",
+}","400 Bad Request
+Body: 
+{
+    ""message"":""Not enough data to create an account""
+}","400 Bad Request
+Body: 
+{
+    ""message"":""Not enough data to create an account""
+}",Passed,
+5,POST /api/v1/courier – Duplicate login,"A courier account is already created successfully 
+with a unique login (e.g., login: ""ninja"")","Send POST request with the same login value 
+used in the precondition","{
+    ""login"": ""ninja"",
+    ""password"": ""1234"",
+    ""firstName"": ""saske""
+}","409 Сonflict
+Body:
+{
+    ""message"": ""This login is not available""
+}","409 Сonflict
+Body:
+{
+    ""message"": ""This login is not available""
+}",Passed,
+6,DELETE /api/v1/courier/:id – Successful deletion,"- Create a courier with POST /api/v1/courier.
+-Retrieve the courier’s id using POST /api/v1/courier/login.","Send DELETE request to /api/v1/courier/:id with 
+the retrieved valid id","{ 
+     ""id"":""<valid-id>"" 
+}","200 OK
+Body: 
+{
+    ""ok"": true
+}","200 OK
+Body: 
+{
+    ""ok"": true
+}",Passed,
+7,DELETE /api/v1/courier/:id – Missing id,,Send DELETE request without id,"{ 
+}","400 Bad Request
+Body: 
+{
+    ""message"":""Not enough data to remove the courier""
+}","{
+    ""code"": 404,
+    ""message"": ""There's no courier with this ID.""
+}",Failed,https://gallevin.atlassian.net/jira/software/c/projects/GLP9/issues?jql=project%20%3D%20%22GLP9%22%20ORDER%20BY%20created%20DESC
+8,DELETE /api/v1/courier/:id – Non-existent id,Ensure the requested id does not belong to any existing courier.,Send DELETE request with a non-existent id,"{ 
+    ""id"":""99999""
+}","404 Not Found
+ Body: 
+{
+    ""message"":""There's no courier with this ID""
+}","404 Not Found
+ Body: 
+{
+    ""message"":""There's no courier with this ID""
+}",Passed,
+9,DELETE /api/v1/courier/:id – Verify courier is actually deleted,"- Create a courier with POST /api/v1/courier.
+- Retrieve courier id via POST /api/v1/courier/login.
+- Delete courier with DELETE /api/v1/courier/:id.","After successful DELETE, 
+send another DELETE /api/v1/courier/:id 
+with the same id.","{ 
+     ""id"":""<valid-id>"" 
+}","404 Not Found
+ Body: 
+{
+    ""message"":""There's no courier with this ID""
+}","404 Not Found
+ Body: 
+{
+    ""message"":""There's no courier with this ID""
+}",Passed,
+10,,,,,,,Passed,
+11,,,,,,,,

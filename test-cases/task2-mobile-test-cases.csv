@@ -1,0 +1,225 @@
+ID,Test Case,Precondition,Test Steps,Expected Result,Actual Result,Status,Jira Bug Link
+1,"Verify that the home screen layout after
+login matches the Figma design        ","- The APK of the Urban Scooter app is installed on the emulator.
+- A courier account is created via API using a POST request with JSON body (API documentation: URL/docs/en/).
+- The mobile app is connected to the correct backend via the configuration window (""?"" icon on the home screen).
+- The device is connected to the internet.
+- User is logged into the mobile app and on the home screen.
+- Figma design for the home screen is accessible for visual comparison.","- Log into the app
+- Navigate to the home screen.
+- Open the corresponding Figma screen
+- Visually compare layout, spacing, fonts, 
+and element positions","The layout of the home screen matches the 
+Figma design exactly in terms of element placement, 
+spacing, colors, and typography","- Instead of a logout icon, a user/profile icon is displayed.
+- A blue dot appears above the ""My orders"" tab, even 
+though there are no accepted or new orders in the list.
+
+",Fail,https://gallevin.atlassian.net/jira/software/c/projects/GLP9/issues?jql=project%20%3D%20%22GLP9%22%20ORDER%20BY%20created%20DESC
+2,"Verify that a push notification is sent at 21:59 on 
+the delivery day if the order is not yet completed
+","- The APK of the Urban Scooter app is installed on the emulator.
+- A courier account is created via API using a POST request with JSON body (API documentation: URL/docs/en/).
+- A delivery order with a return date at least 2 days in the future is created via the web app using the Opera browser 
+(to avoid overdue status and allow for valid notification testing).
+- The mobile app is connected to the correct backend via the configuration window (""?"" icon on the home screen).
+- The device is connected to the internet.
+- Figma design for the home screen is accessible for visual comparison.
+- Push notifications are enabled on the device        ","- On the emulator, set the device date 
+to match the order’s delivery date
+- Set the device time to 21:59
+- Wait and observe if a notification appears        ","- A push notification is received at 21:59 if the order
+has not been completed
+-  he push notification matches the Figma design in:
+  - Layout and spacing
+  - Font style and size
+  - Colors and icon (if applicable)
+  - Overall structure and alignment        ",no push notification is recived,Fail,https://gallevin.atlassian.net/jira/software/c/projects/GLP9/issues?jql=project%20%3D%20%22GLP9%22%20ORDER%20BY%20created%20DESC
+3,"Verify that no push notification is sent if the order 
+is already marked as completed before 21:59	","- The APK of the Urban Scooter app is installed on the emulator.
+- A courier account is created via API using a POST request with JSON body (API documentation: URL/docs/en/).
+- A delivery order with a return date at least 2 days in the future is created via the web app using the Opera browser 
+- The mobile app is connected to the correct backend via the configuration window (""?"" icon on the home screen).
+- The device is connected to the internet.
+- Figma design for the home screen is accessible for visual comparison.
+- Push notifications are enabled on the device        ","- Set the emulator date to match the order’s 
+delivery date
+- Make sure the current time is before 21:59
+- In the app, tap the ""Accept"" button to mark
+ the order as delivered
+- Set the time to 21:59
+- Observe whether a notification appears","- No push notification is received at 21:59 if the order
+ has already been completed       
+","- No push notification is received at 21:59 if the order
+ has already been completed       
+",Pass,
+4,"Verify that no push notification is sent at 21:59
+on the day before the delivery date        ","- The APK of the Urban Scooter app is installed on the emulator.
+- A courier account is created via API using a POST request with JSON body (API documentation: URL/docs/en/).
+- A delivery order with a return date at least 3 days in the future is created via the web app using the Opera browser 
+- The mobile app is connected to the correct backend via the configuration window (""?"" icon on the home screen).
+- The device is connected to the internet.
+- Figma design for the home screen is accessible for visual comparison.
+- Push notifications are enabled on the device        ","- Set the emulator date to one day before the 
+delivery date
+- Set the time to 21:59
+- Wait and observe if a push notification 
+appears","- No push notification is received at 21:59 if it is not 
+yet the delivery date        ","- No push notification is received at 21:59 if it is not 
+yet the delivery date        ",Pass,
+5,"Verify that the push notification is received at
+21:59 even when the mobile app is closed        ","- The APK of the Urban Scooter app is installed on the emulator.
+- A courier account is created via API using a POST request with JSON body (API documentation: URL/docs/en/).
+- A delivery order with a return date at least 2days in the future is created via the web app using the Opera browser 
+- The mobile app is connected to the correct backend via the configuration window (""?"" icon on the home screen).
+- The device is connected to the internet.
+- Figma design for the home screen is accessible for visual comparison.
+- Push notifications are enabled on the device.","- Close the app completely (not just in background)
+- Set the emulator date to the order’s delivery date
+- Set the time to 21:59
+- Wait and observe if a push notification appears","- A push notification is received at 21:59 even when
+the app is closed        ",no push notification is recived,Fail,https://gallevin.atlassian.net/jira/software/c/projects/GLP9/issues?jql=project%20%3D%20%22GLP9%22%20ORDER%20BY%20created%20DESC
+6,"Verify that the push notification is received at 
+21:59 when the mobile app is running in the 
+background	","- The APK of the Urban Scooter app is installed on the emulator.
+- A courier account is created via API using a POST request with JSON body (API documentation: URL/docs/en/).
+- A delivery order with a return date at least 2days in the future is created via the web app using the Opera browser 
+- The mobile app is connected to the correct backend via the configuration window (""?"" icon on the home screen).
+- The device is connected to the internet.
+- Figma design for the home screen is accessible for visual comparison.
+- Push notifications are enabled on the device.","- Minimize the app (send it to the background)
+- Set the emulator date to the order’s delivery date
+- Set the time to 21:59
+- Wait and observe if a push notification appears","- A push notification is received at 21:59 when the 
+app is in the background        ",no push notification is recived,Fail,https://gallevin.atlassian.net/jira/software/c/projects/GLP9/issues?jql=project%20%3D%20%22GLP9%22%20ORDER%20BY%20created%20DESC
+7,"Verify that tapping the notification opens the app
+ when it is fully closed	","- The APK of the Urban Scooter app is installed on the emulator.
+- A courier account is created via API using a POST request with JSON body (API documentation: URL/docs/en/).
+- A delivery order for today is created via the web app using the Opera browser
+- The mobile app is connected to the correct backend via the configuration window (""?"" icon on the home screen).
+- The device is connected to the internet.
+- Figma design for the home screen is accessible for visual comparison.
+- Push notifications are enabled on the device.","- Fully close the app
+- Set the emulator date to the order’s delivery date
+- Set the time to 21:59
+- Wait and observe if a push notification appears
+- Tap the notification
+- Observe app behavior        ",- The app opens after tapping the notification        ,,Fail,
+8,"Verify that tapping the notification opens the app
+ when it is running in the background	","- The APK of the Urban Scooter app is installed on the emulator.
+- A courier account is created via API using a POST request with JSON body (API documentation: URL/docs/en/).
+- A delivery order for today is created via the web app using the Opera browser
+- The mobile app is connected to the correct backend via the configuration window (""?"" icon on the home screen).
+- The device is connected to the internet.
+- Figma design for the home screen is accessible for visual comparison.
+- Push notifications are enabled on the device.","- Minimize the app
+- Set the emulator date to the order’s delivery date
+- Set the time to 21:59
+- Wait and observe if a push notification appears
+- Tap the notification
+- Observe app behavior      -   ",- The app opens after tapping the notification,,Fail,
+9,"Verify that ""No internet access"" pop-up appears 
+(as designed in Figma) when tapping ""All orders""
+with no internet connection        ","- The APK of the Urban Scooter app is installed on the emulator.
+- A courier account is created via API using a POST request with JSON body (API documentation: URL/docs/en/).
+- A delivery order for today is created via the web app using the Opera browser
+- The mobile app is connected to the correct backend via the configuration window (""?"" icon on the home screen).
+- Device is disconnected from the internet
+- Figma design for the home screen is accessible for visual comparison.
+- Push notifications are enabled on the device.","- Open the app
+- Navigate to the screen with the ""All orders"" button
+- Tap the ""All orders"" button
+- Observe the popup","- A pop-up with the message ""No internet access""
+appears
+- The design matches the Figma spec in layout, colors, 
+and structure        ",,Pass,
+10,"Verify that tapping ""OK"" closes the ""No internet 
+access"" pop-up        ","- The APK of the Urban Scooter app is installed on the emulator.
+- A courier account is created via API using a POST request with JSON body (API documentation: URL/docs/en/).
+- A delivery order for today is created via the web app using the Opera browser
+- The mobile app is connected to the correct backend via the configuration window (""?"" icon on the home screen).
+- Device is disconnected from the internet
+- Figma design for the home screen is accessible for visual comparison.
+- Push notifications are enabled on the device.","- Open the app
+- Navigate to the screen with the ""All orders"" button
+- Tap the ""All orders"" button
+- Tap the ""OK"" button on the pop-up
+- Observe the behavior        ","- The ""No internet access"" pop-up disappears after 
+tapping ""OK""        ",,Pass,
+11,"Verify that ""No internet access"" pop-up appears 
+(as in Figma) when tapping ""My orders"" with no 
+internet connection        ","- The APK of the Urban Scooter app is installed on the emulator.
+- A courier account is created via API using a POST request with JSON body (API documentation: URL/docs/en/).
+- A delivery order for today is created via the web app using the Opera browser
+- The mobile app is connected to the correct backend via the configuration window (""?"" icon on the home screen).
+- Device is disconnected from the internet
+- Figma design for the home screen is accessible for visual comparison.
+- Push notifications are enabled on the device.","- Open the app
+- Navigate to the screen with the ""My orders"" button
+- Tap the ""All orders"" button
+- Observe the popup","- A pop-up with the message ""No internet access""
+appears
+- The design matches the Figma spec in layout, colors, 
+and structure        ",,Pass,
+12,"Verify that ""No internet access"" pop-up appears 
+(as in Figma) when tapping ""Accept"" with no 
+internet connection        ","- The APK of the Urban Scooter app is installed on the emulator.
+- A courier account is created via API using a POST request with JSON body (API documentation: URL/docs/en/).
+- A delivery order for today is created via the web app using the Opera browser
+- The mobile app is connected to the correct backend via the configuration window (""?"" icon on the home screen).
+- Device is disconnected from the internet
+- Figma design for the home screen is accessible for visual comparison.
+- Push notifications are enabled on the device.","- Open the app
+- Navigate to the screen with the ""Accept"" button
+- Tap the ""All orders"" button
+- Observe the popup","- A pop-up with the message ""No internet access""
+appears
+- The design matches the Figma spec in layout, colors, 
+and structure        ",,Pass,
+,,,,,,,
+14,"Verify that ""No internet access"" pop-up appears
+(as in Figma) when tapping ""Options"" with no 
+internet connection        ","- The APK of the Urban Scooter app is installed on the emulator.
+- A courier account is created via API using a POST request with JSON body (API documentation: URL/docs/en/).
+- A delivery order for today is created via the web app using the Opera browser
+- The mobile app is connected to the correct backend via the configuration window (""?"" icon on the home screen).
+- Device is disconnected from the internet
+- Figma design for the home screen is accessible for visual comparison.
+- Push notifications are enabled on the device.","- Open the app
+- Navigate to the screen with the ""Options"" button
+- Tap the ""Options"" button
+- Observe the popup","- A pop-up with the message ""No internet access""
+appears
+- The design matches the Figma spec in layout, colors, 
+and structure        ",,Pass,
+15,"Verify that tapping outside the ""No internet access"" 
+pop-up does not close it        ","- The APK of the Urban Scooter app is installed on the emulator.
+- A courier account is created via API using a POST request with JSON body (API documentation: URL/docs/en/).
+- A delivery order for today is created via the web app using the Opera browser
+- The mobile app is connected to the correct backend via the configuration window (""?"" icon on the home screen).
+- Device is disconnected from the internet
+- Figma design for the home screen is accessible for visual comparison.
+- Push notifications are enabled on the device.","- Open the app
+- Navigate to the screen with the ""Accept"" button
+- Tap the ""Options"" button
+- Tap outside the boundaries of the pop-up window 
+(anywhere else on screen)
+- Observe the popup","- The pop-up remains visible and is not dismissed when
+tapping outside the window        ","When tapping outside the “No internet access” pop-up, it is dismissed
+ and the user returns to the previous screen while the device is still 
+offline. The user can continue attempting actions without a network connection.",Fail,https://gallevin.atlassian.net/jira/software/c/projects/GLP9/issues?jql=project%20%3D%20%22GLP9%22%20ORDER%20BY%20created%20DESC
+16,"Verify that the ""No internet access"" pop-up appears 
+again if the user taps a button after dismissing the 
+previous pop-up	","- The APK of the Urban Scooter app is installed on the emulator.
+- A courier account is created via API using a POST request with JSON body (API documentation: URL/docs/en/).
+- A delivery order for today is created via the web app using the Opera browser
+- The mobile app is connected to the correct backend via the configuration window (""?"" icon on the home screen).
+- Device is disconnected from the internet
+- Figma design for the home screen is accessible for visual comparison.
+- Push notifications are enabled on the device.","- Open the app
+- Navigate to the screen with the ""Accept"" button
+- Tap any active button (e.g. ""My orders"") → pop-up 
+appears
+- Tap the ""OK"" button on the pop-up
+- Tap the button again	","- The ""No internet access"" pop-up appears again when 
+tapping a button, even after it was dismissed previously	",,Pass,

@@ -1,0 +1,536 @@
+ID,Test Case,Precondition,Test Steps,Equivalence Class,Boundary Values,Test Data for Equivalence Class,Test Data for Boundary Values,Expected Result ,Actual Result in Chrome 1280x720  ,Actual Result in Opera 1280x720,Pass/Fail,Jira Bug Link
+1,"Verify that a 2-character Latin name is accepted 
+in the ""First Name"" field","- The user clicks the Order button to navigate to the 
+  About Customer screen
+- Fields is visible and empty","- Enter ""Jo"" into the First Name field
+- Remove focus (e.g., click outside the field)",Valid length ,"2-15 latin laters, spaces, and dashes ",Jo,Jo,"- No error message appears
+- Field is not highlighted in red","- No error message appears
+- Field is not highlighted in red","- No error message appears
+- Field is not highlighted in red""",Pass,
+2,"Verify that a 3-character Latin name is accepted
+in the ""First Name"" field","- The user clicks the Order button to navigate to the 
+  About Customer screen
+- Fields is visible and empty","- Enter ""Jon"" into the First Name field
+- Remove focus (e.g., click outside the field)",Valid length ,"2-15 latin laters, spaces, and dashes ",Jon,Jon,"- No error message appears
+- Field is not highlighted in red","- No error message appears
+- Field is not highlighted in red","- No error message appears
+- Field is not highlighted in red",Pass,
+3,"Verify that a 14-character Latin name is accepted 
+in the ""First Name"" field","- The user clicks the Order button to navigate to the 
+  About Customer screen
+- Fields is visible and empty","- Enter ""Joahn Smith Jr"" into the First Name field
+- Remove focus (e.g., click outside the field)",Valid length ,"2-15 latin laters, spaces, and dashes ",Joahn Smith Jr,Joahn Smith Jr,"- No error message appears
+- Field is not highlighted in red","- No error message appears
+- Field is not highlighted in red","- No error message appears
+- Field is not highlighted in red",Pass,
+4,"Verify that a 15-character Latin name is accepted 
+in the ""First Name"" field","- The user clicks the Order button to navigate to the 
+  About Customer screen
+- Fields is visible and empty","- Enter ""Jontan Smith Jr"" into the First Name field
+- Remove focus (e.g., click outside the field)",Valid length ,"2-15 latin laters, spaces, and dashes ",Jontan Smith Jr,Jontan Smith Jr,"- No error message appears
+- Field is not highlighted in red","- No error message appears
+- Field is not highlighted in red","- No error message appears
+- Field is not highlighted in red",Pass,
+5,"Verify that spaces and dashes are allowed in the
+""First Name""field","- The user clicks the Order button to navigate to the 
+  About Customer screen
+- Fields is visible and empty","- Enter ""Jon-Smith Jr"" into the First Name field
+- Remove focus (e.g., click outside the field)","Letters, spaces, dashes",N/A        ,Jon-Smith Jr,N/A        ,"- No error message appears
+- Field is not highlighted in red","- No error message appears
+- Field is not highlighted in red","- No error message appears
+- Field is not highlighted in red",Pass,
+6,"Verify that entering 1 character in the ""First Name"" field 
+shows an error","- The user clicks the Order button to navigate to the 
+  About Customer screen
+- Fields is visible and empty","- Enter ""J"" into the First Name field
+- Remove focus (e.g., click outside the field)""",Invalid length	,"2-15 latin laters, spaces, and dashes ",J,J,"-Field highlighted in red
+-Error text: Enter valid name","-Field highlighted in red
+-Error text: Enter valid name","-Field highlighted in red
+-Error text: Enter valid name",Pass,
+7,"Verify that entering 16 characters in the "" First Name"" field  
+shows an error","- The user clicks the Order button to navigate to the 
+  About Customer screen
+- Fields is visible and empty","- Enter ""AlexanderJohnson"" into the First Name field
+- Remove focus (e.g., click outside the field)",Invalid length	,"2-15 latin laters, spaces, and dashes ",AlexanderJohnson,AlexanderJohnson,"-Field highlighted in red
+-Error text: Enter valid name","-Field highlighted in red
+-Error text: Enter valid name","-Field highlighted in red
+-Error text: Enter valid name",Pass,
+8,"Verify that empty input in the ""First Name"" shows an error","- The user clicks the Order button to navigate to the 
+  About Customer screen
+- Fields is visible and empty","- Click on the ""First Name"" field
+- Remove focus (e.g., click outside the field)",Empty input,N/A        ,(empty string)        ,N/A        ,"-Field highlighted in red
+-Error text: Enter valid name","-Field highlighted in red
+-Error text: Enter valid name","-Field highlighted in red
+-Error text: Enter valid name",Pass,
+9,"Verify that entering non-Latin characters in the ""First Name"" field
+show an error","- The user clicks the Order button to navigate to the 
+  About Customer screen
+- Fields is visible and empty","- Enter ""אבי שבתאי"" into the First Name field.
+- Remove focus (e.g., click outside the field)",Invalid character        ,N/A   ,אבי שבתאי,N/A        ,"-Field highlighted in red
+-Error text: Enter valid name","-Field highlighted in red
+-Error text: Enter valid name","-Field highlighted in red
+-Error text: Enter valid name",Pass,
+10,"Verify that entering a digits in the ""First Name"" field 
+show an error","- The user clicks the Order button to navigate to the 
+  About Customer screen
+- Fields is visible and empty","- Enter ""John123"" into the First Name field.
+- Remove focus (e.g., click outside the field)",Invalid character        ,N/A   ,John123,N/A        ,"-Field highlighted in red
+-Error text: Enter valid name","-Field highlighted in red
+-Error text: Enter valid name","-Field highlighted in red
+-Error text: Enter valid name",Pass,
+11,"Verify that entering ""?"" symbol in the ""First Name"" field 
+show an error","- The user clicks the Order button to navigate to the 
+  About Customer screen
+- Fields is visible and empty","- Enter ""Jon?"" into the First Name field
+- Remove focus (e.g., click outside the field)",Invalid character        ,N/A   ,Jon?,N/A        ,"-Field highlighted in red
+-Error text: Enter valid name","-Field highlighted in red
+-Error text: Enter valid name","-Field highlighted in red
+-Error text: Enter valid name",Pass,
+12,"Verify that entering a comma in the ""First Name"" field 
+show an error","- The user clicks the Order button to navigate to the 
+  About Customer screen
+- Fields is visible and empty","- Enter ""John,"" into the First Name field.
+- Remove focus (e.g., click outside the field)",Invalid character        ,N/A   ,"John,",N/A        ,"-Field highlighted in red
+-Error text: Enter valid name","-Field highlighted in red
+-Error text: Enter valid name","-Field highlighted in red
+-Error text: Enter valid name",Pass,
+13,"Verify that entering a dot in the ""First Name"" field 
+show an error","- The user clicks the Order button to navigate to the 
+  About Customer screen
+- Fields is visible and empty","- Enter ""Jon."" into the First Name field
+- Remove focus (e.g., click outside the field)",Invalid character        ,N/A   ,Jon.,N/A        ,"-Field highlighted in red
+-Error text: Enter valid name","-Field highlighted in red
+-Error text: Enter valid name","-Field highlighted in red
+-Error text: Enter valid name",Pass,
+14,"Verify that entering a ""!"" symbol in the ""First Name"" field 
+show an error","- The user clicks the Order button to navigate to the 
+  About Customer screen
+- Fields is visible and empty","- Enter ""John!"" into the First Name field.
+- Remove focus (e.g., click outside the field)",Invalid character        ,N/A   ,John!,N/A        ,"-Field highlighted in red
+-Error text: Enter valid name","-Field highlighted in red
+-Error text: Enter valid name","-Field highlighted in red
+-Error text: Enter valid name",Pass,
+15,"Verify that entering a ""@"" symbol in the ""First Name"" field 
+show an error","- The user clicks the Order button to navigate to the 
+  About Customer screen
+- Fields is visible and empty","- Enter ""John@"" into the First Name field.
+- Remove focus (e.g., click outside the field)",Invalid character        ,N/A   ,John@,N/A        ,"-Field highlighted in red
+-Error text: Enter valid name","-Field highlighted in red
+-Error text: Enter valid name","-Field highlighted in red
+-Error text: Enter valid name",Pass,
+16,"Verify that entering a ""#"" symbol in the ""First Name"" field 
+show an error","- The user clicks the Order button to navigate to the 
+  About Customer screen
+- Fields is visible and empty","- Enter ""John#"" into the First Name field.
+- Remove focus (e.g., click outside the field)",Invalid character        ,N/A   ,John#,N/A        ,"-Field highlighted in red
+-Error text: Enter valid name","-Field highlighted in red
+-Error text: Enter valid name","-Field highlighted in red
+-Error text: Enter valid name",Pass,
+17,"Verify that entering a ""$"" symbol in the ""First Name"" field 
+show an error","- The user clicks the Order button to navigate to the 
+  About Customer screen
+- Fields is visible and empty","- Enter ""John$"" into the First Name field.
+- Remove focus (e.g., click outside the field)",Invalid character        ,N/A   ,John$,N/A        ,"-Field highlighted in red
+-Error text: Enter valid name","-Field highlighted in red
+-Error text: Enter valid name","-Field highlighted in red
+-Error text: Enter valid name",Pass,
+18,"Verify that a 2-character Latin name is accepted 
+in the ""Last name"" field","- The user clicks the Order button to navigate to the 
+  About Customer screen
+- Fields is visible and empty","- Enter ""Jo"" into the Last nam field
+- Remove focus (e.g., click outside the field)",Valid length ,"2-15 latin laters, spaces, and dashes ",Jo,Jo,"- No error message appears
+- Field is not highlighted in red","- No error message appears
+- Field is not highlighted in red","- No error message appears
+- Field is not highlighted in red",Pass,
+19,"Verify that a 3-character Latin name is accepted
+in the ""Last name"" field","- The user clicks the Order button to navigate to the 
+  About Customer screen
+- Fields is visible and empty","- Enter ""Jon"" into the Last name field
+- Remove focus (e.g., click outside the field)",Valid length ,"2-15 latin laters, spaces, and dashes ",Jon,Jon,"- No error message appears
+- Field is not highlighted in red","- No error message appears
+- Field is not highlighted in red","- No error message appears
+- Field is not highlighted in red",Pass,
+20,"Verify that a 14-character Latin name is accepted 
+in the ""Last name"" field","- The user clicks the Order button to navigate to the 
+  About Customer screen
+- Fields is visible and empty","- Enter ""Joahn Smith Jr"" into the Last name field
+- Remove focus (e.g., click outside the field)",Valid length ,"2-15 latin laters, spaces, and dashes ",Joahn Smith Jr,Joahn Smith Jr,"- No error message appears
+- Field is not highlighted in red","- No error message appears
+- Field is not highlighted in red","- No error message appears
+- Field is not highlighted in red",Pass,
+21,"Verify that a 15-character Latin name is accepted 
+in the ""Last name"" field","- The user clicks the Order button to navigate to the 
+  About Customer screen
+- Fields is visible and empty","- Enter ""Jontan Smith Jr"" into the Last name field
+- Remove focus (e.g., click outside the field)",Valid length ,"2-15 latin laters, spaces, and dashes ",Jontan Smith Jr,Jontan Smith Jr,"- No error message appears
+- Field is not highlighted in red","- No error message appears
+- Field is not highlighted in red","- No error message appears
+- Field is not highlighted in red",Pass,
+22,"Verify that spaces and dashes are allowed in the
+""Last name""field","- The user clicks the Order button to navigate to the 
+  About Customer screen
+- Fields is visible and empty","- Enter ""Jon-Smith Jr"" into the Last name field
+- Remove focus (e.g., click outside the field)","Letters, spaces, dashes",N/A        ,Jon-Smith Jr,N/A        ,"- No error message appears
+- Field is not highlighted in red","- No error message appears
+- Field is not highlighted in red","- No error message appears
+- Field is not highlighted in red",Pass,
+23,"Verify that entering 1 character in the ""Last name"" field 
+shows an error","- The user clicks the Order button to navigate to the 
+  About Customer screen
+- Fields is visible and empty","- Enter ""J"" into the Last name field
+- Remove focus (e.g., click outside the field)""",Invalid length	,"2-15 latin laters, spaces, and dashes ",J,J,"-Field highlighted in red
+-Error text: Enter valid name","-Field highlighted in red
+-Error text: Enter valid name","-Field highlighted in red
+-Error text: Enter valid name",Pass,
+24,"Verify that entering 16 characters in the "" Last name"" field  
+shows an error","- The user clicks the Order button to navigate to the 
+  About Customer screen
+- Fields is visible and empty","- Enter ""AlexanderJohnson"" into the Last name field
+- Remove focus (e.g., click outside the field)",Invalid length	,"2-15 latin laters, spaces, and dashes ",AlexanderJohnson,AlexanderJohnson,"-Field highlighted in red
+-Error text: Enter valid name","- No error message appears
+- Field is not highlighted in red","- No error message appears
+- Field is not highlighted in red",Fail,https://gallevin.atlassian.net/jira/software/c/projects/GLP9/issues?jql=project%20%3D%20%22GLP9%22%20ORDER%20BY%20created%20DESC
+25,"Verify that empty input in the ""Last name"" shows an error","- The user clicks the Order button to navigate to the 
+  About Customer screen
+- Fields is visible and empty","- Click on the ""Last name"" field
+- Remove focus (e.g., click outside the field)",Empty input,N/A        ,(empty string)	,N/A        ,"-Field highlighted in red
+-Error text: Enter valid name","-Field highlighted in red
+-Error text: Enter valid name","-Field highlighted in red
+-Error text: Enter valid name",Pass,
+26,"Verify that entering non-Latin characters in the ""Last name"" field
+show an error","- The user clicks the Order button to navigate to the 
+  About Customer screen
+- Fields is visible and empty","- Enter ""אבי שבתאי"" into the Last name field.
+- Remove focus (e.g., click outside the field)",Invalid character        ,N/A   ,אבי שבתאי,N/A        ,"-Field highlighted in red
+-Error text: Enter valid name","-Field highlighted in red
+-Error text: Enter valid name","-Field highlighted in red
+-Error text: Enter valid name",Pass,
+27,"Verify that entering a digits in the ""Last name"" field 
+show an error","- The user clicks the Order button to navigate to the 
+  About Customer screen
+- Fields is visible and empty","- Enter ""John123"" into the Last name field.
+- Remove focus (e.g., click outside the field)",Invalid character        ,N/A   ,John123,N/A        ,"-Field highlighted in red
+-Error text: Enter valid name","-Field highlighted in red
+-Error text: Enter valid name","-Field highlighted in red
+-Error text: Enter valid name",Pass,
+28,"Verify that entering ""?"" symbol in the ""Last name"" field 
+show an error","- The user clicks the Order button to navigate to the 
+  About Customer screen
+- Fields is visible and empty","- Enter ""Jon?"" into the Last name field
+- Remove focus (e.g., click outside the field)",Invalid character        ,N/A   ,Jon?,N/A        ,"-Field highlighted in red
+-Error text: Enter valid name","-Field highlighted in red
+-Error text: Enter valid name","-Field highlighted in red
+-Error text: Enter valid name",Pass,
+29,"Verify that entering a comma in the ""Last name"" field 
+show an error","- The user clicks the Order button to navigate to the 
+  About Customer screen
+- Fields is visible and empty","- Enter ""John,"" into the Last name field.
+- Remove focus (e.g., click outside the field)",Invalid character        ,N/A   ,"John,",N/A        ,"-Field highlighted in red
+-Error text: Enter valid name","-Field highlighted in red
+-Error text: Enter valid name","-Field highlighted in red
+-Error text: Enter valid name",Pass,
+30,"Verify that entering a dot in the ""Last name"" field 
+show an error","- The user clicks the Order button to navigate to the 
+  About Customer screen
+- Fields is visible and empty","- Enter ""Jon."" into the Last name field
+- Remove focus (e.g., click outside the field)",Invalid character        ,N/A   ,Jon.,N/A        ,"-Field highlighted in red
+-Error text: Enter valid name","-Field highlighted in red
+-Error text: Enter valid name","-Field highlighted in red
+-Error text: Enter valid name",Pass,
+31,"Verify that entering a ""!"" symbol in the ""Last name"" field 
+show an error","- The user clicks the Order button to navigate to the 
+  About Customer screen
+- Fields is visible and empty","- Enter ""John!"" into the Last name field.
+- Remove focus (e.g., click outside the field)",Invalid character        ,N/A   ,John!,N/A        ,"-Field highlighted in red
+-Error text: Enter valid name","-Field highlighted in red
+-Error text: Enter valid name","-Field highlighted in red
+-Error text: Enter valid name",Pass,
+32,"Verify that entering a ""@"" symbol in the ""Last name"" field 
+show an error","- The user clicks the Order button to navigate to the 
+  About Customer screen
+- Fields is visible and empty","- Enter ""John@"" into the Last name field.
+- Remove focus (e.g., click outside the field)",Invalid character        ,N/A   ,John@,N/A        ,"-Field highlighted in red
+-Error text: Enter valid name","-Field highlighted in red
+-Error text: Enter valid name","-Field highlighted in red
+-Error text: Enter valid name",Pass,
+33,"Verify that entering a ""#"" symbol in the ""Last name"" field 
+show an error","- The user clicks the Order button to navigate to the 
+  About Customer screen
+- Fields is visible and empty","- Enter ""John#"" into the Last name field.
+- Remove focus (e.g., click outside the field)",Invalid character        ,N/A   ,John#,N/A        ,"-Field highlighted in red
+-Error text: Enter valid name","-Field highlighted in red
+-Error text: Enter valid name","-Field highlighted in red
+-Error text: Enter valid name",Pass,
+34,"Verify that entering a ""$"" symbol in the ""Last name"" field 
+show an error","- The user clicks the Order button to navigate to the 
+  About Customer screen
+- Fields is visible and empty","- Enter ""John$"" into the Last name field.
+- Remove focus (e.g., click outside the field)",Invalid character        ,N/A   ,John$,N/A        ,"-Field highlighted in red
+-Error text: Enter valid name","-Field highlighted in red
+-Error text: Enter valid name","-Field highlighted in red
+-Error text: Enter valid name",Pass,
+35,Verify that a 5-character valid address is accepted in Adrdess field,"- The user clicks the Order button to navigate to the 
+  About Customer screen
+- Fields is visible and empty","- Enter ""A1234"" into the Address field.
+- Remove focus (e.g., click outside the field)",Valid length ,"5-50 letters, numbers, 
+spaces, dashes, dots, and commas",A1234,A1234,"- No error message appears
+- Field is not highlighted in red","- No error message appears
+- Field is not highlighted in red","- No error message appears
+- Field is not highlighted in red",Pass,
+36,Verify that a 6-character valid address is accepted  in Adrdess field,"- The user clicks the Order button to navigate to the 
+  About Customer screen
+- Fields is visible and empty","- Enter ""A12345"" into the Address field.
+- Remove focus (e.g., click outside the field)",Valid length ,"5-50 letters, numbers, 
+spaces, dashes, dots, and commas",A12345,A12345,"- No error message appears
+- Field is not highlighted in red","- No error message appears
+- Field is not highlighted in red","- No error message appears
+- Field is not highlighted in red",Pass,
+37,Verify that a 49-character valid address is accepted  in Adrdess field,"- The user clicks the Order button to navigate to the 
+  About Customer screen
+- Fields is visible and empty","- Enter ""12345 Long Street Name, Building A-5, Floor 23.12""
+ into the Address field.
+- Remove focus (e.g., click outside the field)",Valid length ,"5-50 letters, numbers, 
+spaces, dashes, dots, and commas","12345 Long Street Name, Building A-5, Floor 23.12","12345 Long Street Name, Building A-5, Floor 23.12","- No error message appears
+- Field is not highlighted in red","- No error message appears
+- Field is not highlighted in red","- No error message appears
+- Field is not highlighted in red",Pass,
+38,Verify that a 50-character valid address is accepted  in Adrdess field,"- The user clicks the Order button to navigate to the 
+  About Customer screen
+- Fields is visible and empty","- Enter ""12345 Long Street Name, Building A-5, Floor 23.123""
+ into the Address field.
+- Remove focus (e.g., click outside the field)",Valid length ,"5-50 letters, numbers, 
+spaces, dashes, dots, and commas","12345 Long Street Name, Building A-5, Floor 23.123","12345 Long Street Name, Building A-5, Floor 23.123","- No error message appears
+- Field is not highlighted in red","-Field highlighted in red
+-Error text: Enter a valid address","-Field highlighted in red
+-Error text: Enter a valid address",Fail,https://gallevin.atlassian.net/jira/software/c/projects/GLP9/issues?jql=project%20%3D%20%22GLP9%22%20ORDER%20BY%20created%20DESC
+39,"Verify that letters, numbers, dashes, dots, space and commas 
+are accepted in Address field","- The user clicks the Order button to navigate to the 
+  About Customer screen
+- Fields is visible and empty","- Enter ""45-B Main St., Apt.""
+ into the Address field.
+- Remove focus (e.g., click outside the field)","letters, numbers, dashes, 
+dots, space and commas",N/A        ,"45-B Main St., Apt",N/A        ,"- No error message appears
+- Field is not highlighted in red","- No error message appears
+- Field is not highlighted in red","- No error message appears
+- Field is not highlighted in red",Pass,
+40,Verify that empty input in the address field shows an error,"- The user clicks the Order button to navigate to the 
+  About Customer screen
+- Fields is visible and empty","- Click on the Address field
+- Remove focus (e.g., click outside the field)",Empty input,N/A        ,(empty string)   ,N/A        ,"-Field highlighted in red
+-Error text: Enter a valid address","- No error message appears
+- Field is not highlighted in red","- No error message appears
+- Field is not highlighted in red",Fail,https://gallevin.atlassian.net/jira/software/c/projects/GLP9/issues?jql=project%20%3D%20%22GLP9%22%20ORDER%20BY%20created%20DESC
+41,"Verify that a 4-character address in Adrdess field
+show an error","- The user clicks the Order button to navigate to the 
+  About Customer screen
+- Fields is visible and empty","- Enter ""A123.""
+ into the Address field.
+- Remove focus (e.g., click outside the field)",Invalid length        ,"5-50 letters, numbers, 
+spaces, dashes, dots, and commas",A123,A123,"-Field highlighted in red
+-Error text: Enter a valid address","-Field highlighted in red
+-Error text: Enter a valid address","-Field highlighted in red
+-Error text: Enter a valid address",Pass,
+42,"Verify that a 51-character address in Adrdess field
+show an error","- The user clicks the Order button to navigate to the 
+  About Customer screen
+- Fields is visible and empty","- Enter ""12345 Long Street Name, Building A-5, Floor 23.1234""
+ into the Address field.
+- Remove focus (e.g., click outside the field)",Invalid length        ,"5-50 letters, numbers, 
+spaces, dashes, dots, and commas","12345 Long Street Name, Building A-5, Floor 23.1234","12345 Long Street Name, Building A-5, Floor 23.1234","-Field highlighted in red
+-Error text: Enter a valid address","-Field highlighted in red
+-Error text: Enter a valid address","-Field highlighted in red
+-Error text: Enter a valid address",Pass,
+43,"Verify that non-Latin letters address in Adrdess field
+show an error","- The user clicks the Order button to navigate to the 
+  About Customer screen
+- Fields is visible and empty","- Enter ""ויטק 9""
+ into the Address field.
+- Remove focus (e.g., click outside the field)",Invalid character        ,N/A   ,ויטק 9,N/A,"-Field highlighted in red
+-Error text: Enter a valid address","-Field highlighted in red
+-Error text: Enter a valid address","-Field highlighted in red
+-Error text: Enter a valid address",Pass,
+44,"Verify that ""?"" in the Adrdess field show an error","- The user clicks the Order button to navigate to the 
+  About Customer screen
+- Fields is visible and empty","- Enter ""A1234?"" into the Address field.
+- Remove focus (e.g., click outside the field)",Invalid character        ,N/A   ,A1234?,N/A,"-Field highlighted in red
+-Error text: Enter a valid address","-Field highlighted in red
+-Error text: Enter a valid address","-Field highlighted in red
+-Error text: Enter a valid address",Pass,
+45,"Verify that ""!"" in the Adrdess field show an error","- The user clicks the Order button to navigate to the 
+  About Customer screen
+- Fields is visible and empty","- Enter ""A1234!""
+ into the Address field.
+- Remove focus (e.g., click outside the field)",Invalid character        ,N/A   ,A1234!,N/A,"-Field highlighted in red
+-Error text: Enter a valid address","-Field highlighted in red
+-Error text: Enter a valid address","-Field highlighted in red
+-Error text: Enter a valid address",Pass,
+46,"Verify that ""#"" in the Adrdess field show an error","- The user clicks the Order button to navigate to the 
+  About Customer screen
+- Fields is visible and empty","- Enter ""A1234#""
+ into the Address field.
+- Remove focus (e.g., click outside the field)",Invalid character        ,N/A   ,A1234#,N/A,"-Field highlighted in red
+-Error text: Enter a valid address","-Field highlighted in red
+-Error text: Enter a valid address","-Field highlighted in red
+-Error text: Enter a valid address",Pass,
+47,"Verify that ""$"" in the Adrdess field show an error","- The user clicks the Order button to navigate to the 
+  About Customer screen
+- Fields is visible and empty","- Enter ""A1234$""
+ into the Address field.
+- Remove focus (e.g., click outside the field)",Invalid character        ,N/A   ,A1234$,N/A,"-Field highlighted in red
+-Error text: Enter a valid address","-Field highlighted in red
+-Error text: Enter a valid address","-Field highlighted in red
+-Error text: Enter a valid address",Pass,
+48,"Verify that ""@"" in the Adrdess field show an error","- The user clicks the Order button to navigate to the 
+  About Customer screen
+- Fields is visible and empty","- Enter ""A1234@""
+ into the Address field.
+- Remove focus (e.g., click outside the field)",Invalid character        ,N/A   ,A1234@,N/A,"-Field highlighted in red
+-Error text: Enter a valid address","-Field highlighted in red
+-Error text: Enter a valid address","-Field highlighted in red
+-Error text: Enter a valid address",Pass,
+49,Verify that spaces before are trimmed automatically,"- The user clicks the Order button to navigate to the 
+  About Customer screen
+- Fields is visible and empty","- Enter ""(space) 123 Main St.""
+ into the Address field.
+- Remove focus (e.g., click outside the field)",,N/A   ,(space) 123 Main St,N/A,-Spaces are removed automatically.,-Spaces are removed automatically.,-Spaces are removed automatically.,Pass,
+50,Verify that spaces after are trimmed automatically,"- The user clicks the Order button to navigate to the 
+  About Customer screen
+- Fields is visible and empty","- Enter ""123 Main St. (space) ""
+ into the Address field.
+- Remove focus (e.g., click outside the field)",,N/A   ,123 Main St. (space),N/A,-Spaces are removed automatically.,-Spaces are removed automatically.,-Spaces are removed automatically.,Pass,
+51,"Verify that a 10-character phone number with plus sign is accepted
+in the ""Phone"" field","- The user clicks the Order button to navigate to the 
+  About Customer screen
+- Fields is visible and empty","- Enter ""+123456789"" in the Phone field
+-Remove focus (e.g., click outside the field)",Valid length ,"10–12 characters +
+required plus sign.",+123456789,+1234567489,"- No error message appears
+- Field is not highlighted in red","-Field highlighted in red
+-Error text: Enter a valid phone number","-Field highlighted in red
+-Error text: Enter a valid phone number",Fail,https://gallevin.atlassian.net/jira/software/c/projects/GLP9/issues?jql=project%20%3D%20%22GLP9%22%20ORDER%20BY%20created%20DESC
+52,"Verify that a 11-character phone number with plus sign is accepted
+in the ""Phone"" field","- The user clicks the Order button to navigate to the 
+  About Customer screen
+- Fields is visible and empty","- Enter ""+0123456789"" in the Phone field
+- Remove focus (e.g., click outside the field)",Valid length ,"10–12 characters +
+required plus sign.",+0123456789,+0123456789,"- No error message appears
+- Field is not highlighted in red""","- No error message appears
+- Field is not highlighted in red""","- No error message appears
+- Field is not highlighted in red""",Pass,
+53,"Verify that a 12-character phone number with plus sign is accepted
+in the ""Phone"" field","- The user clicks the Order button to navigate to the 
+  About Customer screen
+- Fields is visible and empty","- Enter ""+01234567891"" in the Phone field
+- Remove focus (e.g., click outside the field)",Valid length ,"10–12 characters +
+required plus sign.",+01234567891,+01234567891,""" No error message appears
+- Field is not highlighted in red""","- No error message appears
+- Field is not highlighted in red""","- No error message appears
+- Field is not highlighted in red""",Pass,
+54,"Verify that empty input in the Phone field shows an error
+
+","- The user clicks the Order button to navigate to the 
+  About Customer screen
+- Fields is visible and empty","- Click on the Phone field
+- Remove focus (e.g., click outside the field)",Invalid length,"10–12 characters +
+required plus sign.",N/A,N/A,"-Field highlighted in red
+-Error text: Enter a valid phone number","-Field highlighted in red
+-Error text: Enter a valid phone number","-Field highlighted in red
+-Error text: Enter a valid phone number",Pass,
+55,Verify that entering 9 characters in the Phone field shows an error,"- The user clicks the Order button to navigate to the 
+  About Customer screen
+- Fields is visible and empty","- Enter ""+01234567"" in the Phone field
+- Remove focus (e.g., click outside the field)",Invalid length,"10–12 characters +
+required plus sign.",+01234567,+01234567,"-Field highlighted in red
+-Error text: Enter a valid phone number","-Field highlighted in red
+-Error text: Enter a valid phone number","-Field highlighted in red
+-Error text: Enter a valid phone number",Pass,
+56,Verify that entering 13 characters in the Phone field shows an error,"- The user clicks the Order button to navigate to the 
+  About Customer screen
+- Fields is visible and empty","- Enter ""+012345678912"" in the Phone field
+- Remove focus (e.g., click outside the field)",Invalid length,"10–12 characters +
+required plus sign.",+012345678912,+012345678912,"-Field highlighted in red
+-Error text: Enter a valid phone number","- No error message appears
+- Field is not highlighted in red""","- No error message appears
+- Field is not highlighted in red""",Fail,https://gallevin.atlassian.net/jira/software/c/projects/GLP9/issues?jql=project%20%3D%20%22GLP9%22%20ORDER%20BY%20created%20DESC
+57,Verify that input without plus sign in the Phone field show an error,"- The user clicks the Order button to navigate to the 
+  About Customer screen
+- Fields is visible and empty","- Enter ""1234567890"" in the Phone field
+- Remove focus (e.g., click outside the field)",Invalid  format,N/A,1234567890,N/A,"-Field highlighted in red
+-Error text: Enter a valid phone number","-Field highlighted in red
+-Error text: Enter a valid phone number","-Field highlighted in red
+-Error text: Enter a valid phone number",Pass,
+58,Verify that letters in the Phone field are show an error,"- The user clicks the Order button to navigate to the 
+  About Customer screen
+- Fields is visible and empty","- Enter ""+A12345678 in the Phone field
+- Remove focus (e.g., click outside the field)",Invalid  character,N/A,+A12345678,N/A,"-Field highlighted in red
+-Error text: Enter a valid phone number","-Field highlighted in red
+-Error text: Enter a valid phone number","-Field highlighted in red
+-Error text: Enter a valid phone number",Pass,
+59,"Verify that ""?"" in the Phone field show an error","- The user clicks the Order button to navigate to the 
+  About Customer screen
+- Fields is visible and empty","- Enter ""+?12345678"" in the Phone field
+- Remove focus (e.g., click outside the field)",Invalid  character,N/A,+?12345678,N/A,"-Field highlighted in red
+-Error text: Enter a valid phone number","-Field highlighted in red
+-Error text: Enter a valid phone number","-Field highlighted in red
+-Error text: Enter a valid phone number",Pass,
+60,"Verify that ""."" in the Phone field show an error","- The user clicks the Order button to navigate to the 
+  About Customer screen
+- Fields is visible and empty","- Enter ""+.12345678 in the Phone field
+- Remove focus (e.g., click outside the field)",Invalid  character,N/A,+.12345678,N/A,"-Field highlighted in red
+-Error text: Enter a valid phone number","-Field highlighted in red
+-Error text: Enter a valid phone number","-Field highlighted in red
+-Error text: Enter a valid phone number",Pass,
+61,"Verify that "","" in the Phone field show an error","- The user clicks the Order button to navigate to the 
+  About Customer screen
+- Fields is visible and empty","- Enter ""+,12345678"" in the Phone field
+- Remove focus (e.g., click outside the field)",Invalid  character,N/A,"+,12345678",N/A,"-Field highlighted in red
+-Error text: Enter a valid phone number","-Field highlighted in red
+-Error text: Enter a valid phone number","-Field highlighted in red
+-Error text: Enter a valid phone number",Pass,
+62,"Verify that ""$"" in the Phone field show an error","- The user clicks the Order button to navigate to the 
+  About Customer screen
+- Fields is visible and empty","- Enter ""+$12345678"" in the Phone field
+- Remove focus (e.g., click outside the field)",Invalid  character,N/A,+$12345678,N/A,"-Field highlighted in red
+-Error text: Enter a valid phone number","-Field highlighted in red
+-Error text: Enter a valid phone number","-Field highlighted in red
+-Error text: Enter a valid phone number",Pass,
+63,"Verify that ""#"" in the Phone field show an error","- The user clicks the Order button to navigate to the 
+  About Customer screen
+- Fields is visible and empty","- Enter ""+#12345678"" in the Phone field
+- Remove focus (e.g., click outside the field)",Invalid  character,N/A,+#12345678,N/A,"-Field highlighted in red
+-Error text: Enter a valid phone number","-Field highlighted in red
+-Error text: Enter a valid phone number","-Field highlighted in red
+-Error text: Enter a valid phone number",Pass,
+64,"Verify that ""@"" in the Phone field show an error","- The user clicks the Order button to navigate to the 
+  About Customer screen
+- Fields is visible and empty","- Enter ""+@12345678"" in the Phone field
+- Remove focus (e.g., click outside the field)",Invalid  character,N/A,+@12345678,N/A,"-Field highlighted in red
+-Error text: Enter a valid phone number","-Field highlighted in red
+-Error text: Enter a valid phone number","-Field highlighted in red
+-Error text: Enter a valid phone number",Pass,
+65,"Verify that ""!"" in the Phone field show an error","- The user clicks the Order button to navigate to the 
+  About Customer screen
+- Fields is visible and empty","- Enter ""+!12345678"" in the Phone field
+- Remove focus (e.g., click outside the field)",Invalid  character,N/A,+!12345678,N/A,"-Field highlighted in red
+-Error text: Enter a valid phone number","-Field highlighted in red
+-Error text: Enter a valid phone number","-Field highlighted in red
+-Error text: Enter a valid phone number",Pass,
+66,Verify that selecting a valid station from suggestions is accepted,"- The user clicks the Order button to navigate to the 
+  About Customer screen
+- Fields is visible and empty","- Click on the Subway Station field to open the suggestion list
+- Select a station from the list (1st Street)
+- Remove focus (e.g., click outside the field)",,N/A,N/A,N/A,"- No error message appears
+- Field is not highlighted in red""","- No error message appears
+- Field is not highlighted in red""","- No error message appears
+- Field is not highlighted in red""",Pass,
+67,,"- The user clicks the Order button to navigate to the 
+  About Customer screen
+- Fields is visible and empty",,,,,,,,,,
+68,,"- The user clicks the Order button to navigate to the 
+  About Customer screen
+- Fields is visible and empty",,,,,,,,,,
+69,,"- The user clicks the Order button to navigate to the 
+  About Customer screen
+- Fields is visible and empty",,,,,,,,,,
+70,,"- The user clicks the Order button to navigate to the 
+  About Customer screen
+- Fields is visible and empty",,,,,,,,,,
