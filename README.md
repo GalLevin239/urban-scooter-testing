@@ -8,11 +8,12 @@ Final QA project covering **Web**, **Mobile**, and **Backend (API)** testing for
 - **Task 3 – Backend (API)**: Test Add Courier and Delete Courier endpoints using Postman.
 
 ## Repository Structure
-- `test-cases/` – CSV exports from Google Sheets (Task 1, Task 2, Task 3, Theory)  
-- `requirements/` – RTM (Requirements ↔ Test Cases ↔ Bugs) for each task  
-- `bug-reports/` – Selected bug examples (public markdown)  
-- `postman-collection/` – Postman collection + environment (Task 3)  
-- `screenshots/` – Screenshots of reported issues  
+- **test-cases/** — CSV exports from Google Sheets  
+  (Task 1: Web, Task 2: Mobile, Task 3: API, Theory)
+- **requirements/** — Requirements traced from the official specs  
+  (only highlighted items per task)
+- **bug-reports.md** — Selected bug examples with links to Jira screenshots
+- **screenshots/** — Example screenshots of reported Jira issues
 
 ## Tools & Stack
 - Web: Chrome, Opera (+ DevTools)  
