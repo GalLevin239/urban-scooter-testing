@@ -9,7 +9,7 @@ Final QA project covering **Web**, **Mobile**, and **Backend (API)** testing for
 
 ## Repository Structure
 - **test-cases/** — CSV exports from Google Sheets  
-  (Task 1: Web, Task 2: Mobile, Task 3: API, Theory)
+  (Task 1: Web, Task 2: Mobile, Task 3: API,)
 - **requirements/** — Requirements traced from the official specs  
   (only highlighted items per task)
 - **bug-reports.md** — Selected bug examples with links to Jira screenshots
