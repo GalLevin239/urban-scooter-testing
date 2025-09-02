@@ -1,12 +1,18 @@
 # Bug Reports — Urban Scooter Project
 
-🔗 [Full Jira Board](https://gallevin.atlassian.net/jira/software/c/projects/GLP9/issues?jql=project%20%3D%20%22GLP9%22%20ORDER%20BY%20created%20DESC)
+This file contains selected bug reports from Jira.  
+Full details are tracked in Jira (private), while this repository includes screenshots of example issues.
 
 ---
 
-## Example Bugs
-| Bug ID  | Summary                                   | Status    | Link |
-|---------|-------------------------------------------|-----------|------|
-| GLP9-1  | "First Name" accepts Hebrew characters    | Open      | [View](https://gallevin.atlassian.net/browse/GLP9-1) |
-| GLP9-2  | Phone number accepts 13 digits            | In Review | [View](https://gallevin.atlassian.net/browse/GLP9-2) |
-| GLP9-3  | Address field allows less than 5 chars    | Open      | [View](https://gallevin.atlassian.net/browse/GLP9-3) |
+## Web UI (Task 1)
+- [GLP9-2](screenshots/GLP9-2.png) — Last Name field displays error when 50 characters entered  
+- [GLP9-3](screenshots/GLP9-3.png) — Address field allows empty input without error  
+
+## Mobile App (Task 2)
+- [GLP9-7](screenshots/GLP9-7.png) — Push Notification Missing (2-hour prior)  
+- [GLP9-9](screenshots/GLP9-9.png) — Push Notification Failure (app closed)  
+- [GLP9-10](screenshots/GLP9-10.png) — "No internet access" pop-up dismissed incorrectly  
+
+## Backend API (Task 3)
+- [GLP9-11](screenshots/GLP9-11.png) — DELETE courier without id returns 404 instead of 400  
